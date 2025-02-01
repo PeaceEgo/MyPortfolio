@@ -36,7 +36,7 @@ const projects = [
     github: "https://github.com/PeaceEgo/TaskMate.git",
   },
   {
-    title: "TastyTrip",
+    title: "TastyTrip(On-going)",
     description:
       "TastyTrip is a food delivery platform connecting customers with restaurants and dispatch riders. It provides real-time order tracking, multiple payment options, and a dynamic dashboard for business owners to manage their orders effectively. The app is designed for seamless, efficient food delivery.",
     techStack: ["React", "Node.js", "MongoDB", "WebSockets"],
