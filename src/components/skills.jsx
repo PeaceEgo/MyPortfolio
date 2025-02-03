@@ -48,17 +48,22 @@ const Skills = ({ isDarkMode }) => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <Paper
-                elevation={3}
-                sx={{
-                  bgcolor: isDarkMode ? "#1b2a41" : "#fff",
-                  color: isDarkMode ? "#ffffff" : "#002240",
-                  padding: "20px",
-                  borderRadius: "12px",
-                  transition: "transform 0.3s ease-in-out",
-                  "&:hover": { transform: "scale(1.05)", cursor: "pointer" },
-                }}
-              >
+             <Paper
+  elevation={3}
+  sx={{
+    bgcolor: isDarkMode ? "#1b2a41" : "#fff",
+    color: isDarkMode ? "#ffffff" : "#002240",
+    padding: "20px",
+    borderRadius: "12px",
+    transition: "transform 0.3s ease-in-out",
+    "&:hover": { transform: "scale(1.05)", cursor: "pointer" },
+    minHeight: "150px", 
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+  }}
+>
+
                 <Typography
                   variant="h6"
                   fontWeight="bold"
