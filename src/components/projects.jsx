@@ -1,4 +1,3 @@
-
 import React from "react";
 import {
   Box,
@@ -36,7 +35,7 @@ const projects = [
     github: "https://github.com/PeaceEgo/TaskMate.git",
   },
   {
-    title: "TastyTrip(On-going)",
+    title: "TastyTrip (On-going)",
     description:
       "TastyTrip is a food delivery platform connecting customers with restaurants and dispatch riders. It provides real-time order tracking, multiple payment options, and a dynamic dashboard for business owners to manage their orders effectively. The app is designed for seamless, efficient food delivery.",
     techStack: ["React", "Node.js", "MongoDB", "WebSockets"],
@@ -51,16 +50,28 @@ const Projects = ({ isDarkMode }) => {
     <Box
       id="projects"
       sx={{
-        // minHeight: "100vh",
+        minHeight: "100vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        flexDirection: "column",
         padding: "60px 20px",
         background: isDarkMode
-          ? "linear-gradient(135deg, rgb(22,22,22), #1b2a41)"
-          : "linear-gradient(135deg, #3dcfb6, #2a9d8f)",
-        color: "#fff",
+        ? "linear-gradient(135deg, rgb(22,22,22), #1b2a41)"
+        : "linear-gradient(135deg, #f3f9f8, #dbe9e8)",
         textAlign: "center",
       }}
     >
-      <Typography variant="h4" fontWeight="bold" mb={4}>
+      {/* Section Heading */}
+      <Typography
+        variant="h4"
+        fontWeight="bold"
+        mb={4}
+        sx={{
+         fontFamily: "Poppins, sans-serif",
+            color: isDarkMode ? "#ff8c42" : "#002240"
+        }}
+      >
         Projects
       </Typography>
 
@@ -77,12 +88,20 @@ const Projects = ({ isDarkMode }) => {
                 height: "100%",
                 display: "flex",
                 flexDirection: "column",
-                "&:hover": { transform: "scale(1.05)", boxShadow: "0 10px 20px rgba(0,0,0,0.2)" },
+                "&:hover": {
+                  transform: "scale(1.05)",
+                  boxShadow: "0 10px 20px rgba(0,0,0,0.2)",
+                },
               }}
             >
               <CardMedia component="img" height="200" image={project.image} alt={project.title} />
               <CardContent sx={{ flexGrow: 1 }}>
-                <Typography variant="h6" fontWeight="bold" gutterBottom>
+                <Typography
+                  variant="h6"
+                  fontWeight="bold"
+                  gutterBottom
+                  sx={{ color: isDarkMode ? "#ff8c42" : "#002240" }}
+                >
                   {project.title}
                 </Typography>
                 <Typography variant="body2" mb={2} sx={{ minHeight: "120px" }}>
@@ -96,10 +115,11 @@ const Projects = ({ isDarkMode }) => {
                       key={i}
                       label={tech}
                       sx={{
-                        background: isDarkMode ? "#3dcfb6" : "#2a9d8f",
+                        background: isDarkMode ? "transparent" : "#1b2a41",
                         color: "#fff",
                         fontWeight: "500",
                         fontSize: "0.8rem",
+                        border: isDarkMode ? "1px solid #fff" : "1px solid #1b2a41",
                       }}
                     />
                   ))}
@@ -109,7 +129,6 @@ const Projects = ({ isDarkMode }) => {
                 <Box sx={{ display: "flex", justifyContent: "center", gap: 2 }}>
                   <Button
                     variant="contained"
-                    color="primary"
                     startIcon={<OpenInNewIcon />}
                     href={project.liveLink}
                     target="_blank"
@@ -121,32 +140,35 @@ const Projects = ({ isDarkMode }) => {
                       padding: "6px 12px",
                       minWidth: "120px",
                       transition: "0.3s",
-                      "&:hover": { backgroundColor: "transparent", color: "#ff8c42" },
+                      "&:hover": {
+                        backgroundColor: "transparent",
+                        color: "#ff8c42",
+                        border: "1px solid #ff8c42",
+                      },
                     }}
                   >
                     Live Preview
                   </Button>
                   <Button
-  variant="outlined"
-  startIcon={<GitHubIcon />}
-  href={project.github}
-  target="_blank"
-  sx={{
-    borderColor: isDarkMode ? "#fff" : "#222",  // Adjust for light mode
-    color: isDarkMode ? "#fff" : "#222",  // Adjust for visibility
-    fontSize: "0.75rem",
-    padding: "6px 12px",
-    minWidth: "120px",
-    transition: "0.3s",
-    "&:hover": {
-      backgroundColor: isDarkMode ? "#fff" : "#222",
-      color: isDarkMode ? "#222" : "#fff",
-    },
-  }}
->
-  GitHub
-</Button>
-
+                    variant="outlined"
+                    startIcon={<GitHubIcon />}
+                    href={project.github}
+                    target="_blank"
+                    sx={{
+                      borderColor: isDarkMode ? "#fff" : "#222",
+                      color: isDarkMode ? "#fff" : "#222",
+                      fontSize: "0.75rem",
+                      padding: "6px 12px",
+                      minWidth: "120px",
+                      transition: "0.3s",
+                      "&:hover": {
+                        backgroundColor: isDarkMode ? "#fff" : "#222",
+                        color: isDarkMode ? "#222" : "#fff",
+                      },
+                    }}
+                  >
+                    GitHub
+                  </Button>
                 </Box>
               </CardContent>
             </Card>

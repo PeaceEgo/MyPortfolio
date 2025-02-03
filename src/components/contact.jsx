@@ -29,13 +29,15 @@ const Contact = ({ isDarkMode }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // Validation: Prevent sending if fields are empty
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+      setErrorMessage("All fields are required!");
+      setSuccessMessage("");
+      return;
+    }
+
     emailjs
-      .send(
-        "service_f5ju8ph",
-        "template_b4fnzb8",
-        formData,
-        "49g5knOscr2nPU0--"
-      )
+      .send("service_f5ju8ph", "template_b4fnzb8", formData, "49g5knOscr2nPU0--")
       .then(
         (response) => {
           setSuccessMessage("Your message has been sent successfully!");
@@ -62,11 +64,12 @@ const Contact = ({ isDarkMode }) => {
         gap: 4,
         background: isDarkMode
           ? "linear-gradient(135deg, rgb(22,22,22), #1b2a41)"
-          : "linear-gradient(135deg, #3dcfb6, #2a9d8f)",
+          : "linear-gradient(135deg, #f3f9f8, #dbe9e8)",
         color: isDarkMode ? "#fff" : "#222",
         padding: 4,
       }}
     >
+      
       {/* Contact Info Section */}
       <Box
         sx={{
@@ -81,7 +84,7 @@ const Contact = ({ isDarkMode }) => {
           color: isDarkMode ? "#fff" : "#222",
         }}
       >
-        <IconButton sx={{ fontSize: 48, color: isDarkMode ? "#3dcfb6" : "#2a9d8f" }}>
+        <IconButton sx={{ fontSize: 48, color: isDarkMode ? "#ff8c42" : "#002240" }}>
           <EmailIcon fontSize="inherit" />
         </IconButton>
         <Typography variant="h6" fontWeight="bold" sx={{ mt: 2 }}>
@@ -93,7 +96,7 @@ const Contact = ({ isDarkMode }) => {
           underline="none"
           sx={{
             mt: 2,
-            color: isDarkMode ? "#3dcfb6" : "#2a9d8f",
+            color: isDarkMode ? "#ff8c42" : "#002240",
             fontWeight: "bold",
             "&:hover": { textDecoration: "underline" },
           }}
@@ -113,6 +116,7 @@ const Contact = ({ isDarkMode }) => {
           width: { xs: "100%", md: "50%" },
           padding: 4,
           background: isDarkMode ? "#1b2a41" : "#fff",
+          color: isDarkMode ? "#ff8c42" : "#002240",
           borderRadius: "12px",
           boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
         }}
@@ -141,7 +145,7 @@ const Contact = ({ isDarkMode }) => {
           value={formData.name}
           onChange={handleInputChange}
           fullWidth
-          InputLabelProps={{ sx: { color: isDarkMode ? "#3dcfb6" : "#2a9d8f" } }}
+          InputLabelProps={{ sx: { color: isDarkMode ? "#ff8c42" : "#002240" } }}
           sx={{
             "& .MuiInputBase-root": {
               bgcolor: isDarkMode ? "#1b2a41" : "#fff",
@@ -158,7 +162,7 @@ const Contact = ({ isDarkMode }) => {
           value={formData.email}
           onChange={handleInputChange}
           fullWidth
-          InputLabelProps={{ sx: { color: isDarkMode ? "#3dcfb6" : "#2a9d8f" } }}
+          InputLabelProps={{ sx: { color: isDarkMode ? "#ff8c42" : "#002240" } }}
           sx={{
             "& .MuiInputBase-root": {
               bgcolor: isDarkMode ? "#1b2a41" : "#fff",
@@ -176,7 +180,7 @@ const Contact = ({ isDarkMode }) => {
           value={formData.message}
           onChange={handleInputChange}
           fullWidth
-          InputLabelProps={{ sx: { color: isDarkMode ? "#3dcfb6" : "#2a9d8f" } }}
+          InputLabelProps={{ sx: { color: isDarkMode ? "#ff8c42" : "#002240" } }}
           sx={{
             "& .MuiInputBase-root": {
               bgcolor: isDarkMode ? "#1b2a41" : "#fff",
@@ -186,12 +190,13 @@ const Contact = ({ isDarkMode }) => {
           }}
         />
 
-        {/* Submit Button */}
+        {/* Submit Button with Disabled State */}
         <Button
           type="submit"
           variant="contained"
+          disabled={!formData.name.trim() || !formData.email.trim() || !formData.message.trim()}
           sx={{
-            bgcolor: isDarkMode ? "#3dcfb6" : "#2a9d8f",
+            bgcolor: isDarkMode ? "#3dcfb6" : "#002240",
             color: "#fff",
             fontWeight: "bold",
             borderRadius: "8px",

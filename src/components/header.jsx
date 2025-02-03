@@ -1,17 +1,19 @@
 import React, { useState } from "react";
-import { AppBar, Toolbar, Typography, Box, IconButton, Drawer, List, ListItem, ListItemText } from "@mui/material";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Box,
+  IconButton,
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import { motion } from "framer-motion";
-
-const scrollToSection = (id, closeMenu) => {
-  const section = document.getElementById(id);
-  if (section) {
-    section.scrollIntoView({ behavior: "smooth" });
-    if (closeMenu) closeMenu(); // Close the mobile menu after clicking
-  }
-};
 
 const navItems = [
   { label: "Home", id: "hero" },
@@ -20,6 +22,15 @@ const navItems = [
   { label: "Projects", id: "projects" },
   { label: "Contact", id: "contact" },
 ];
+
+const scrollToSection = (id) => {
+  setTimeout(() => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }, 300);
+};
 
 const Header = ({ isDarkMode, toggleDarkMode }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -32,7 +43,9 @@ const Header = ({ isDarkMode, toggleDarkMode }) => {
     <AppBar
       position="sticky"
       sx={{
-        background: isDarkMode ? "rgba(22,22,22,0.9)" : "rgba(243, 249, 248, 0.9)",
+        background: isDarkMode
+          ? "rgba(22,22,22,0.9)"
+          : "rgba(243, 249, 248, 0.9)",
         backdropFilter: "blur(10px)",
         boxShadow: "none",
       }}
@@ -43,8 +56,9 @@ const Header = ({ isDarkMode, toggleDarkMode }) => {
           variant="h6"
           component="div"
           sx={{
+            fontFamily: "Poppins, sans-serif",
             fontWeight: "bold",
-            color: isDarkMode ? "#3dcfb6" : "#2a9d8f",
+            color: "#FF8C42",
             cursor: "pointer",
           }}
           onClick={() => scrollToSection("hero")}
@@ -60,11 +74,13 @@ const Header = ({ isDarkMode, toggleDarkMode }) => {
                 component="a"
                 onClick={() => scrollToSection(id)}
                 sx={{
-                  color: isDarkMode ? "#f3f9f8" : "#161616",
+                  fontFamily: "Poppins, sans-serif",
+                  color: isDarkMode ? "#f3f9f8" : "#002240",
                   textDecoration: "none",
                   fontWeight: "500",
                   cursor: "pointer",
-                  "&:hover": { color: isDarkMode ? "#3dcfb6" : "#2a9d8f" },
+                  transition: "color 0.3s ease",
+                  "&:hover": { color: "#FF8C42" },
                 }}
               >
                 {label}
@@ -76,7 +92,10 @@ const Header = ({ isDarkMode, toggleDarkMode }) => {
         {/* Right-side Icons (Dark Mode + Menu) */}
         <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
           {/* Dark Mode Toggle */}
-          <IconButton onClick={toggleDarkMode} sx={{ color: isDarkMode ? "#3dcfb6" : "#2a9d8f" }}>
+          <IconButton
+            onClick={toggleDarkMode}
+            sx={{ color: isDarkMode ? "#FF8C42" : "#002240" }}
+          >
             {isDarkMode ? <Brightness7Icon /> : <Brightness4Icon />}
           </IconButton>
 
@@ -85,7 +104,7 @@ const Header = ({ isDarkMode, toggleDarkMode }) => {
             onClick={handleDrawerToggle}
             sx={{
               display: { xs: "block", md: "none" },
-              color: isDarkMode ? "#3dcfb6" : "#2a9d8f",
+              color: isDarkMode ? "#FF8C42" : "#002240",
             }}
           >
             <MenuIcon />
@@ -94,17 +113,37 @@ const Header = ({ isDarkMode, toggleDarkMode }) => {
       </Toolbar>
 
       {/* Mobile Drawer */}
-      <Drawer anchor="right" open={mobileOpen} onClose={handleDrawerToggle}>
+      <Drawer
+        anchor="right"
+        open={mobileOpen}
+        onClose={handleDrawerToggle}
+        sx={{
+          "& .MuiDrawer-paper": {
+            backgroundColor: isDarkMode ? "#1b2a41" : "#f3f9f8",
+            color: isDarkMode ? "#f3f9f8" : "#002240",
+          },
+        }}
+      >
         <List sx={{ width: 200 }}>
           {navItems.map(({ label, id }) => (
             <ListItem
               button
               key={id}
               onClick={() => {
-                scrollToSection(id, () => setMobileOpen(false)); // Close menu after scrolling
+                setMobileOpen(false); // Close menu first
+                scrollToSection(id); // Then scroll
               }}
             >
-              <ListItemText primary={label} sx={{ textAlign: "center" }} />
+              <ListItemText
+                primary={label}
+                sx={{
+                  textAlign: "center",
+                  fontFamily: "Poppins, sans-serif",
+                  color: isDarkMode ? "#f3f9f8" : "#002240",
+                  transition: "color 0.3s ease",
+                  "&:hover": { color: "#FF8C42" },
+                }}
+              />
             </ListItem>
           ))}
         </List>
