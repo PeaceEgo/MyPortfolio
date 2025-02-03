@@ -53,7 +53,7 @@ const Hero = ({ isDarkMode }) => {
       {/* Animated Subheading */}
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.3 }}>
         <Typography variant="h5" sx={{ mt: 2, maxWidth: "600px", fontFamily: "Poppins, sans-serif" }}>
-          Building sleek, scalable, and seamless web experiences
+           I Build sleek, scalable, and seamless web experiences
         </Typography>
       </motion.div>
 

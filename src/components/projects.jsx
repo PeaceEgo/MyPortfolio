@@ -29,7 +29,7 @@ const projects = [
     title: "TaskMate",
     description:
       "TaskMate is a task management application designed for productivity. It features real-time task updates, Firebase authentication, and a sleek UI. The app supports dark mode and push notifications, ensuring users stay on top of their tasks effortlessly.",
-    techStack: ["React", "Firebase", "Material-UI"],
+    techStack: ["React", "Firebase", "Tailwind-CSS", "Material-UI"],
     image: taskmate,
     liveLink: "https://gettaskmate.netlify.app/",
     github: "https://github.com/PeaceEgo/TaskMate.git",
