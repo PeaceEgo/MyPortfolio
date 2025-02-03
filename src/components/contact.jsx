@@ -21,11 +21,13 @@ const Contact = ({ isDarkMode }) => {
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
+  // Handle input changes
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
+  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -35,8 +37,15 @@ const Contact = ({ isDarkMode }) => {
       return;
     }
 
+    // Correct parameter structure for EmailJS
+    const templateParams = {
+      user_name: formData.name,
+      user_email: formData.email,  // Ensure this matches EmailJS template
+      message: formData.message,
+    };
+
     emailjs
-      .send("service_f5ju8ph", "template_b4fnzb8", formData, "49g5knOscr2nPU0--")
+      .send("service_f5ju8ph", "template_b4fnzb8", templateParams, "49g5knOscr2nPU0--")
       .then(
         () => {
           setSuccessMessage("Your message has been sent successfully!");
@@ -165,14 +174,6 @@ const Contact = ({ isDarkMode }) => {
             value={formData.name}
             onChange={handleInputChange}
             fullWidth
-            InputLabelProps={{ sx: { color: isDarkMode ? "#ff8c42" : "#002240" } }}
-            sx={{
-              "& .MuiInputBase-root": {
-                bgcolor: isDarkMode ? "#1b2a41" : "#fff",
-                color: isDarkMode ? "#fff" : "#222",
-                borderRadius: "8px",
-              },
-            }}
           />
           <TextField
             variant="outlined"
@@ -182,14 +183,6 @@ const Contact = ({ isDarkMode }) => {
             value={formData.email}
             onChange={handleInputChange}
             fullWidth
-            InputLabelProps={{ sx: { color: isDarkMode ? "#ff8c42" : "#002240" } }}
-            sx={{
-              "& .MuiInputBase-root": {
-                bgcolor: isDarkMode ? "#1b2a41" : "#fff",
-                color: isDarkMode ? "#fff" : "#222",
-                borderRadius: "8px",
-              },
-            }}
           />
           <TextField
             variant="outlined"
@@ -200,14 +193,6 @@ const Contact = ({ isDarkMode }) => {
             value={formData.message}
             onChange={handleInputChange}
             fullWidth
-            InputLabelProps={{ sx: { color: isDarkMode ? "#ff8c42" : "#002240" } }}
-            sx={{
-              "& .MuiInputBase-root": {
-                bgcolor: isDarkMode ? "#1b2a41" : "#fff",
-                color: isDarkMode ? "#fff" : "#222",
-                borderRadius: "8px",
-              },
-            }}
           />
 
           {/* Submit Button */}
