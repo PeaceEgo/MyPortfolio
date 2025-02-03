@@ -98,6 +98,7 @@ const Skills = ({ isDarkMode }) => {
                         fontSize: "0.9rem",
                         fontWeight: "bold",
                         fontFamily: "Inter, sans-serif",
+                        border: isDarkMode ? "1px solid #fff" : "1px solid #1b2a41",
                       }}
                     >
                       {skill}
