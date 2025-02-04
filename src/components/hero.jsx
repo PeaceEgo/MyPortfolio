@@ -46,7 +46,7 @@ const Hero = ({ isDarkMode }) => {
           fontWeight="bold"
           sx={{ fontFamily: "Poppins, sans-serif" }}
         >
-          Hi, I'm Nnorom Peace
+          Hi, I'm Peace Nnorom
         </Typography>
       </motion.div>
 
@@ -78,21 +78,26 @@ const Hero = ({ isDarkMode }) => {
             Let's Talk
           </Button>
           <Button
-            variant="outlined"
-            onClick={() => handleScroll("projects")}
-            sx={{
-              borderColor: isDarkMode ? "#FFFFFF" : "#002240",
-              color: isDarkMode ? "#FFFFFF" : "#002240",
-              fontWeight: "bold",
-              fontFamily: "Poppins, sans-serif",
-              "&:hover": {
-                backgroundColor: isDarkMode ? "#FFFFFF" : "#002240",
-                color: isDarkMode ? "#002240" : "#FFFFFF",
-              },
-            }}
-          >
-            View Projects
-          </Button>
+  variant="outlined"
+  component="a"
+  href="/Nnorom_Peace_CV.pdf"
+  download="Nnorom_Peace_CV.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  sx={{
+    borderColor: isDarkMode ? "#FFFFFF" : "#002240",
+    color: isDarkMode ? "#FFFFFF" : "#002240",
+    fontWeight: "bold",
+    fontFamily: "Poppins, sans-serif",
+    "&:hover": {
+      backgroundColor: isDarkMode ? "#FFFFFF" : "#002240",
+      color: isDarkMode ? "#002240" : "#FFFFFF",
+    },
+  }}
+>
+  Download CV
+</Button>
+
         </Stack>
       </motion.div>
 

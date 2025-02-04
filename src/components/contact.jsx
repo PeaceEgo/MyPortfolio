@@ -62,6 +62,7 @@ const Contact = ({ isDarkMode }) => {
 
   return (
     <Box
+    id = "contact"
       sx={{
         minHeight: "100vh",
         display: "flex",
@@ -119,9 +120,9 @@ const Contact = ({ isDarkMode }) => {
           <Typography variant="h6" fontWeight="bold" sx={{ mt: 2 }}>
             Email
           </Typography>
-          <Typography fontWeight="bold">nnorompeace14@gmail.com</Typography>
+          <Typography fontWeight="bold">Peace Nnorom</Typography>
           <Link
-            href="mailto:nnorompeace14@gmail.com"
+            href="mailto:oziomannora@gmail.com"
             underline="none"
             sx={{
               mt: 2,
