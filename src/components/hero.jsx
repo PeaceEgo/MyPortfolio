@@ -80,7 +80,7 @@ const Hero = ({ isDarkMode }) => {
           <Button
   variant="outlined"
   component="a"
-  href="/Nnorom_Peace_CV.pdf"
+  href="/NNOROM_PEACE_CV.pdf"
   download="Nnorom_Peace_CV.pdf"
   target="_blank"
   rel="noopener noreferrer"
