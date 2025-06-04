@@ -53,7 +53,7 @@ const Hero = ({ isDarkMode }) => {
       {/* Animated Subheading */}
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.3 }}>
         <Typography variant="h5" sx={{ mt: 2, maxWidth: "600px", fontFamily: "Poppins, sans-serif" }}>
-           I Build sleek, scalable, and seamless web experiences
+          I Build sleek, scalable, and seamless web experiences
         </Typography>
       </motion.div>
 
@@ -78,25 +78,25 @@ const Hero = ({ isDarkMode }) => {
             Let's Talk
           </Button>
           <Button
-  variant="outlined"
-  component="a"
-  href="/NNOROM_PEACE_CV.pdf"
-  download="Nnorom_Peace_CV.pdf"
-  target="_blank"
-  rel="noopener noreferrer"
-  sx={{
-    borderColor: isDarkMode ? "#FFFFFF" : "#002240",
-    color: isDarkMode ? "#FFFFFF" : "#002240",
-    fontWeight: "bold",
-    fontFamily: "Poppins, sans-serif",
-    "&:hover": {
-      backgroundColor: isDarkMode ? "#FFFFFF" : "#002240",
-      color: isDarkMode ? "#002240" : "#FFFFFF",
-    },
-  }}
->
-  Download CV
-</Button>
+            variant="outlined"
+            component="a"
+            href="/PeaceNnoromCv.pdf"
+            download="PeaceNnoromCv.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{
+              borderColor: isDarkMode ? "#FFFFFF" : "#002240",
+              color: isDarkMode ? "#FFFFFF" : "#002240",
+              fontWeight: "bold",
+              fontFamily: "Poppins, sans-serif",
+              "&:hover": {
+                backgroundColor: isDarkMode ? "#FFFFFF" : "#002240",
+                color: isDarkMode ? "#002240" : "#FFFFFF",
+              },
+            }}
+          >
+            Download CV
+          </Button>
 
         </Stack>
       </motion.div>
