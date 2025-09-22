@@ -13,7 +13,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import go from "../assets/go.jpg";
 // import taskmate from "../assets/taskmate.jpg";
-import trackGuard from "../assets/trackguard.jpeg";
+import trackguard from "../assets/trackguard.jpeg";
 import tasty from "../assets/tastytrip.jpg";
 
 const projects = [
@@ -21,7 +21,7 @@ const projects = [
     title: "TrackGuard",
     description: "A comprehensive device tracking solution that monitors devices in real-time. Features automated email reports with location history, live WebSocket tracking, and an intuitive dashboard with advanced device management. Built with scalable architecture and polished UI for seamless user experience.",
     techStack: ["Next.js", "NestJS", "Zustand", "MongoDB", "TypeScript", "Tailwind CSS", "WebSockets"],
-    image: trackGuard,
+    image: trackguard,
     liveLink: "https://phone-tracker-fe.onrender.com",
     github: "https://github.com/PeaceEgo/phone-tracker-fe",
 },
