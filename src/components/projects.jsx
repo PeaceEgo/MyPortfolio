@@ -12,10 +12,20 @@ import {
 import GitHubIcon from "@mui/icons-material/GitHub";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import go from "../assets/go.jpg";
-import taskmate from "../assets/taskmate.jpg";
+// import taskmate from "../assets/taskmate.jpg";
 import tasty from "../assets/Tasty.jpg";
+import trackGuard from "../assets/trackGuard.jpeg";
 
 const projects = [
+{
+    title: "trackGuard",
+    description: "A comprehensive device tracking solution that monitors devices in real-time. Features automated email reports with location history, live WebSocket tracking, and an intuitive dashboard with advanced device management. Built with scalable architecture and polished UI for seamless user experience.",
+    techStack: ["Next.js", "NestJS", "Zustand", "MongoDB", "TypeScript", "Tailwind CSS", "WebSockets"],
+    image: trackGuard,
+    liveLink: "https://phone-tracker-fe.onrender.com",
+    github: "https://github.com/PeaceEgo/phone-tracker-fe",
+},
+
   {
     title: "GoRide",
     description:
@@ -25,15 +35,15 @@ const projects = [
     liveLink: "https://go-rideng.netlify.app/",
     github: "https://github.com/chillestdev/GoRide.git",
   },
-  {
-    title: "TaskMate",
-    description:
-      "TaskMate is a task management application designed for productivity. It features real-time task updates, Firebase authentication, and a sleek UI. The app supports dark mode and push notifications, ensuring users stay on top of their tasks effortlessly.",
-    techStack: ["React", "Firebase", "Tailwind-CSS", "Material-UI"],
-    image: taskmate,
-    liveLink: "https://gettaskmate.netlify.app/",
-    github: "https://github.com/PeaceEgo/TaskMate.git",
-  },
+  // {
+  //   title: "TaskMate",
+  //   description:
+  //     "TaskMate is a task management application designed for productivity. It features real-time task updates, Firebase authentication, and a sleek UI. The app supports dark mode and push notifications, ensuring users stay on top of their tasks effortlessly.",
+  //   techStack: ["React", "Firebase", "Tailwind-CSS", "Material-UI"],
+  //   image: taskmate,
+  //   liveLink: "https://gettaskmate.netlify.app/",
+  //   github: "https://github.com/PeaceEgo/TaskMate.git",
+  // },
   {
     title: "TastyTrip (On-going)",
     description:
