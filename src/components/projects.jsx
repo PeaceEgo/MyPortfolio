@@ -13,7 +13,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import go from "../assets/go.jpg";
 // import taskmate from "../assets/taskmate.jpg";
-import trackguard from "../assets/trackguard.jpeg";
+import trackguard from "@/assets/trackguard.jpeg";
 import tasty from "../assets/tastytrip.jpg";
 
 const projects = [
