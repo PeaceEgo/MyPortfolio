@@ -3,10 +3,10 @@ import { Box, Typography, Grid, Paper } from "@mui/material";
 import { motion } from "framer-motion";
 
 const skills = {
-  "Frontend Development": ["React", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "Material-UI"],
-  "Backend Development": ["Node.js", "Express.js", "MongoDB", "WebSockets"],
+  "Frontend Development": [ "JavaScript","React","NextJs", "HTML5", "CSS3", "Tailwind CSS", "Material-UI"],
+  "Backend Development": ["Node.js", "Express.js","NestJs" , "MongoDB", "WebSockets", "Microservices"],
   "Development Tools": ["Git", "GitHub", "Postman", "Firebase"],
-  "Other Expertise": ["REST API", "Web Performance", "Responsive Design"],
+  "Other Expertise": ["REST API", "Web Performance", "Responsive Design", "Agile Methodologies"],
 };
 
 const Skills = ({ isDarkMode }) => {
