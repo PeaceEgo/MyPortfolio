@@ -22,7 +22,7 @@ const projects = [
     description: "A comprehensive device tracking solution that monitors devices in real-time. Features automated email reports with location history, live WebSocket tracking, and an intuitive dashboard with advanced device management. Built with scalable architecture and polished UI for seamless user experience.",
     techStack: ["Next.js", "NestJS", "Zustand", "MongoDB", "TypeScript", "Tailwind CSS", "WebSockets"],
     image: trackguard,
-    liveLink: "https://phone-tracker-fe.onrender.com",
+    liveLink: "https://phone-tracker-fe.vercel.app",
     github: "https://github.com/PeaceEgo/phone-tracker-fe",
 },
 
